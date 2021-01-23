@@ -21,8 +21,6 @@
   <!-- Gazebo specific options -->
   <arg name="gazebo_gui" default="true"/>
   <arg name="paused" default="true"/>
-  <!-- By default, use the urdf location provided from the package -->
-  <arg name="urdf_path" default="$(find franka_description)/robots/panda_arm_hand.urdf.xacro"/>
 
   <!-- launch the gazebo simulator and spawn the robot -->
   <include file="$(find panda_moveit_config)/launch/gazebo.launch" >
@@ -31,7 +29,6 @@
   </include>
 
   <!-- If needed, broadcast static tf for robot root -->
-  
 
   <!-- We do not have a robot connected, so publish fake joint states -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
